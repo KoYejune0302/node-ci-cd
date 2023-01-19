@@ -43,7 +43,7 @@ jobs:
 
 
 
-  ci_prettier
+  ci_prettier:
     name: prettier
     runs-on: ubuntu-latest
 
