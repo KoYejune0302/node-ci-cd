@@ -16,6 +16,8 @@ jobs:
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
+      - name: version check
+        uses: kriasoft/check-version@v1
       - name: Install npm dependencies
         run: npm ci
       - name: Build
