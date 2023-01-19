@@ -28,33 +28,18 @@ jobs:
         run: npm run build
 
 
-  ci_eslint:
-    name: eslint
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v1
-      - uses: stefanoeb/eslint-action@1.0.2
-        with:
-          files: ./src
-
-
-
-
-  ci_prettier:
-    name: prettier
+  ci_eslint_prettier:
+    name: eslint & prettier
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
-      - name: Setup Node
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: npm
+      - name: Install npm dependencies
         run: npm ci
-      - name: Format check
-        run: npm run format
+      - name: ESLint
+        run: npm run lint
+      - name: prettier
+        run: npm run format 
     
 
     

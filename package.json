@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write" 
+    "lint": "eslint ./src",
+    "format": "prettier --check ./src"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,9 @@
   "homepage": "https://github.com/KoYejune0302/node-ci-cd#readme",
   "devDependencies": {
     "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "eslint": "^8.32.0",
+    "prettier": "^2.8.3"
   }
 }
