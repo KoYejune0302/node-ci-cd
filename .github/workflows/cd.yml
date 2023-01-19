@@ -16,8 +16,22 @@ jobs:
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
-      - name: version check
-        uses: kriasoft/check-version@v1
+      - name: Compare npm with local (versions)
+        uses: Rober19/compare-npm-versions-ci@master
+        id: package_version
+        with:
+          path: './'
+          npm_package_name: arcticfox-node-ci-cd
+      # ----------------------------------------------------
+      - name: Get version
+        run: |
+          echo "Version is  ${{ steps.package_version.outputs.version }} "    
+          echo "Version NPM is  ${{ steps.package_version.outputs.pkg_npm_version }} "
+      # ----------------------------------------------------
+      - name: Version Issue
+        if: steps.package_version.outputs.npm_is_greater == 'true'
+        run: |
+          echo "Package will not be deployed due to version number must increase"
       - name: Install npm dependencies
         run: npm ci
       - name: Build
