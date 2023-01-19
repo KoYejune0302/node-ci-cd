@@ -9,7 +9,12 @@ on:
 jobs:
   ci:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, window-latest, NodeJS LTS]
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -22,3 +27,26 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+
+jobs:
+  ci:
+    name: eslint
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@b3
+      - name: Install Modules
+        run: yarn
+      - name: Run ESLint
+        run: eslint . --ext .js, .jsx, .ts, .tsx
+
+jobs:
+  ci:
+    name: prettier
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: Format check
+      run: npm run format
+
+    
