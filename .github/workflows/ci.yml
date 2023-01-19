@@ -1,10 +1,10 @@
 name: CI
 
-on: 
-  push: 
-    branches: [ main ]
+on:
+  push:
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   ci_build:
@@ -27,7 +27,6 @@ jobs:
       - name: Build
         run: npm run build
 
-
   ci_eslint_prettier:
     name: eslint & prettier
     runs-on: ubuntu-latest
@@ -39,7 +38,4 @@ jobs:
       - name: ESLint
         run: npm run lint
       - name: prettier
-        run: npm run format 
-    
-
-    
+        run: npm run format

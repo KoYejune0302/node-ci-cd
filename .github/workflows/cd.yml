@@ -1,8 +1,8 @@
 name: CD
 
-on: 
+on:
   release:
-    types: [ "created" ]
+    types: ['created']
 
 jobs:
   cd:
