@@ -7,8 +7,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ./src",
-    "format": "prettier --check ./src"
+    "lint": "eslint dist/index.js",
+    "format": "prettier --check dist/index.js"
   },
   "repository": {
     "type": "git",
