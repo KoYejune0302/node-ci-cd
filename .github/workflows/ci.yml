@@ -13,8 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest, window-latest, NodeJS LTS]
-        node-version: [16.x]
+        os: [ubuntu-latest, window-latest]
 
     steps:
       - uses: actions/checkout@v3
@@ -34,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@b3
+      - uses: actions/checkout@v3
       - name: Install Modules
         run: yarn
       - name: Run ESLint
@@ -48,6 +47,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v3
       - name: Format check
         run: npm run format
     
