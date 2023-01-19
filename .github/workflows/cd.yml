@@ -30,7 +30,7 @@ jobs:
         if: steps.package_version.outputs.npm_is_greater == 'true'
         run: |
           echo "Package will not be deployed due to version number must increase"
-          foo
+          exit 1
       - name: Install npm dependencies
         run: npm ci
       - name: Build
