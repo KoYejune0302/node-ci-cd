@@ -13,7 +13,8 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest, window-latest]
+        od: [ubuntu-latest]
+        # os: [ubuntu-latest, window-latest]
         node-version: [ latest ]
 
     steps:
