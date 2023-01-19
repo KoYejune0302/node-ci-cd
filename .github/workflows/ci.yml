@@ -28,8 +28,8 @@ jobs:
       - name: Build
         run: npm run build
 
-jobs:
-  ci:
+
+
     name: eslint
     runs-on: ubuntu-latest
 
@@ -40,13 +40,16 @@ jobs:
       - name: Run ESLint
         run: eslint . --ext .js, .jsx, .ts, .tsx
 
-jobs:
-  ci:
+
+
+    
+
     name: prettier
     runs-on: ubuntu-latest
 
-  steps:
-    - name: Format check
-      run: npm run format
+    steps:
+      - name: Format check
+        run: npm run format
+    
 
     
