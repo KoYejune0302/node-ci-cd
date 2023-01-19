@@ -1,3 +1,3 @@
-export default function helloSparcs(nickname : string) {
-    console.log('Hello, ${nickname}!');
+export default function helloSparcs(nickname: string) {
+  console.log("Hello, ${nickname}!");
 }
